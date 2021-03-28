@@ -1,4 +1,6 @@
 <div class="input">
-  <input type="text" />
-  <button>Add</button>
+  <form class="form" (ngSubmit)="onSubmit()">
+    <input type="text" name="todo" [(ngModel)]="todo" />
+    <button type="submit">Add</button>
+  </form>
 </div>

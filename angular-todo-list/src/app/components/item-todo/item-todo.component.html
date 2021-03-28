@@ -1,5 +1,7 @@
-<div class="item">
-  <h5>Have fun coding</h5>
-  <button>Remove</button>
-  <button>Done</button>
+<div [ngClass]="isDone ? 'doneItem' : 'item'">
+  <h3>{{ index + 1 }}).{{ todo.msg }}</h3>
+  <button class="btn-remove" (click)="todoRemove()">Remove</button>
+  <button class="btn-done" (click)="todoDone()">
+    {{ isDone ? "NotDone" : "Done" }}
+  </button>
 </div>

@@ -1,6 +1,11 @@
 <div class="container">
-  <app-input-todo></app-input-todo>
+  <app-input-todo (getTodoMessage)="getTodo($event)"></app-input-todo>
   <div class="row">
-    <app-item-todo *ngFor="let item of list"></app-item-todo>
+    <app-item-todo
+      *ngFor="let item of list; index as i"
+      [todo]="item"
+      [index]="i"
+      (getRemoveTodo)="getRemoveIndex($event)"
+    ></app-item-todo>
   </div>
 </div>
